@@ -1,5 +1,5 @@
 import { Form } from 'antd';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import {
   FieldValues,
   FormProvider,
@@ -30,9 +30,15 @@ const PHForm = ({ onSubmit, children, defaultValues, resolver }: TFormProps) => 
 
   const methods = useForm(formConfig);
 
+  // Update form when defaultValues change
+  useEffect(() => {
+    if (defaultValues) {
+      methods.reset(defaultValues);
+    }
+  }, [defaultValues, methods]);
+
   const submit: SubmitHandler<FieldValues> = (data) => {
     onSubmit(data);
-    methods.reset();
   }
 
   return (

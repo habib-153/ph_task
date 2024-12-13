@@ -10,7 +10,7 @@ type TInputProps = {
 
 const PHInput = ({ type, name, label, disabled }: TInputProps) => {
   return (
-    <div style={{ marginBottom: '20px' }}>
+    <div style={{ marginBottom: '5px' }}>
       <Controller
         name={name}
         render={({ field }) =>(

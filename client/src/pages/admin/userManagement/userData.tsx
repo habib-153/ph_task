@@ -13,7 +13,7 @@ import { useGetAllUsersQuery } from "../../../redux/features/admin/userManagemen
 
 export type TTableData = Pick<
   TUser,
-  "fullName" | "userId" | "email" | "dept" 
+  "fullName" | "email"
 >;
 
 const UserData = () => {
@@ -28,12 +28,10 @@ const UserData = () => {
   ]);
 
   const tableData = userData?.data?.map(
-    ({ _id, fullName, userId, email, dept }) => ({
+    ({ _id, fullName, email }) => ({
       key: _id,
       fullName,
-      userId,
       email,
-      dept
     })
   );
 
@@ -43,21 +41,10 @@ const UserData = () => {
       key: "name",
       dataIndex: "fullName",
     },
-
-    {
-      title: "User Id",
-      key: "userid",
-      dataIndex: "userId",
-    },
     {
       title: "Email",
       key: "email",
       dataIndex: "email",
-    },
-    {
-      title: "Department",
-      key: "dept",
-      dataIndex: "dept",
     },
     {
       title: "Action",

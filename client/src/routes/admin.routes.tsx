@@ -1,6 +1,4 @@
 import AdminDashboard from '../pages/admin/AdminDashboard';
-import CreateAdmin from '../pages/admin/userManagement/CreateAdmin';
-import CreateUser from '../pages/admin/userManagement/CreateUser';
 import UserData from '../pages/admin/userManagement/userData';
 
 
@@ -16,12 +14,12 @@ export const adminPaths = [
       {
         name: 'Create Admin',
         path: 'create-admin',
-        element: <CreateAdmin />,
+        element: <AdminDashboard />,
       },
       {
         name: 'Create User',
         path: 'create-user',
-        element: <CreateUser />,
+        element: <AdminDashboard />,
       },
       {
         name: 'Users',
