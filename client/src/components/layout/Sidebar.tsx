@@ -55,7 +55,7 @@ const Sidebar = () => {
           alignItems: "center",
         }}
       >
-        <h1>Project</h1>
+        <h1>JPL</h1>
       </div>
       <Menu
         theme="dark"
